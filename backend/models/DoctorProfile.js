@@ -1,0 +1,2 @@
+const mongoose = require('mongoose');
+module.exports = mongoose.model('DoctorProfile', new mongoose.Schema({ user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true, unique: true }, specialization: { type: String, default: 'General Medicine' }, languages: { type: [String], default: ['en'] }, bio: { type: String, default: '' }, availability: { type: String, default: 'Weekdays, 9 AM – 5 PM' } }, { timestamps: true }));

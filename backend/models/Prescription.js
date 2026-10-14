@@ -1,0 +1,2 @@
+const mongoose = require('mongoose');
+module.exports = mongoose.model('Prescription', new mongoose.Schema({ consultation: { type: mongoose.Schema.Types.ObjectId, ref: 'Consultation', required: true }, doctor: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, patient: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, medicines: { type: String, required: true }, instructions: { type: String, default: '' } }, { timestamps: true }));

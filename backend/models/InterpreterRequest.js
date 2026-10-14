@@ -1,0 +1,2 @@
+const mongoose = require('mongoose');
+module.exports = mongoose.model('InterpreterRequest', new mongoose.Schema({ consultation: { type: mongoose.Schema.Types.ObjectId, ref: 'Consultation', required: true }, requestedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, language: { type: String, required: true }, interpreter: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }, status: { type: String, enum: ['open', 'accepted', 'declined'], default: 'open' } }, { timestamps: true }));
